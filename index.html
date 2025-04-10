@@ -39,15 +39,19 @@
     <script src="./main.js" defer></script>
   </head>
   <body>
-    <label for="Nome"> Inserisci il tuo nome</label>
-    <input type="text" />
-    <label for="Distanza"> Km da percorrere</label>
-    <input type="text" />
-    <label for="Fascia età">Scegli la fascia di età</label>
-    <select id="label-opzioni" name="fascia età">
-      <option>Minorenne</option>
-      <option>Maggiorenne</option>
-      <option>Over 65</option>
-    </select>
+    <form action="">
+      <label for="Nome"> Inserisci il tuo nome</label>
+      <input id="nome-passeggero" type="text" />
+      <label for="Distanza"> Km da percorrere</label>
+      <input id="distanza" type="number" />
+      <label for="Fascia età">Scegli la fascia di età</label>
+      <select id="fascia-età">
+        <option>Seleziona</option>
+        <option id="minorenne">Minorenne</option>
+        <option id="maggiorenne">Maggiorenne</option>
+        <option id="over65">Over65</option>
+      </select>
+      <button id="invia-dati">Calcola il costo</button>
+    </form>
   </body>
 </html>

@@ -25,10 +25,10 @@ invioEl.addEventListener("click", function () {
   console.log(prezzoScontatoOver65);
 
   if (età === "Minorenne") {
-    alert(prezzoScontatoMinorenni.toFixed(2));
+    alert("€" + prezzoScontatoMinorenni.toFixed(2));
   } else if (età === "Over65") {
-    alert(prezzoScontatoOver65.toFixed(2));
+    alert("€" + prezzoScontatoOver65.toFixed(2));
   } else {
-    alert(costoBiglietto.toFixed(2));
+    alert("€" + costoBiglietto.toFixed(2));
   }
 });

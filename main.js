@@ -1,39 +1,34 @@
 // id elementi
 
 const nomeEl = document.getElementById("nome-passeggero");
-const distanzaEl = parseInt(document.getElementById("distanza"));
+const distanzaEl = document.getElementById("distanza");
 const etàEl = document.getElementById("fascia-età");
 const invioEl = document.getElementById("invia-dati");
-const over65 = document.getElementById("over65");
-const minorenne = document.getElementById("minorenne");
-console.log(nomeEl);
-console.log(distanzaEl.value);
-console.log(etàEl);
-console.log(invioEl);
-console.log(over65);
-console.log(minorenne);
 
-// variabili calcolo del biglietto
-
-const nomeValue = nomeEl.value;
-const distanzaValue = distanzaEl.valueOf;
-const etàValue = etàEl.value;
-const costoBigliettoBase = 0.21;
-let costoBiglietto = costoBigliettoBase * distanzaValue;
-
-console.log(costoBigliettoBase);
-console.log(costoBiglietto);
-// calcolo costo biglietto
+// funzione bottone
 
 invioEl.addEventListener("click", function () {
-  if (minorenne === true) {
-    costoBiglietto = costoBiglietto * 0.8;
-  } else if (over65 === true) {
-    costoBiglietto = costoBiglietto * 0.6;
-  } else {
-    costoBiglietto = costoBiglietto * distanzaValue;
-  }
-  alert(costoBiglietto);
+  const distanza = distanzaEl.value;
+  const età = etàEl.value;
+  console.log(distanza);
+  console.log(età);
+  // variabili calcolo del biglietto
+
+  const costoBigliettoBase = 0.21;
+  const costoBiglietto = costoBigliettoBase * distanza;
+  const prezzoScontatoMinorenni = costoBiglietto * 0.8;
+  const prezzoScontatoOver65 = costoBiglietto * 0.6;
+
+  console.log(costoBigliettoBase);
   console.log(costoBiglietto);
-  return costoBiglietto;
+  console.log(prezzoScontatoMinorenni);
+  console.log(prezzoScontatoOver65);
+
+  if (età === "Minorenne") {
+    alert(prezzoScontatoMinorenni.toFixed(2));
+  } else if (età === "Over65") {
+    alert(prezzoScontatoOver65.toFixed(2));
+  } else {
+    alert(costoBiglietto.toFixed(2));
+  }
 });

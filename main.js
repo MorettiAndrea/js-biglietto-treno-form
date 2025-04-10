@@ -23,6 +23,7 @@ invioEl.addEventListener("click", function () {
   console.log(passeggero);
   console.log(distanza);
   console.log(età);
+
   // variabili calcolo del biglietto
 
   const costoBigliettoBase = 0.21;
@@ -51,3 +52,5 @@ invioEl.addEventListener("click", function () {
     return;
   }
 });
+
+// template pagina

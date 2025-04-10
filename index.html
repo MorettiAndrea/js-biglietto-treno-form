@@ -39,45 +39,71 @@
     <script src="./main.js" defer></script>
   </head>
   <body>
-    <div class="container-xl">
-      <h1>CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
+    <div class="container">
+      <h1 class="text-center">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
       <form id="input-form" action="input">
-        <label for="Nome"> Nome Cognome</label>
-        <input id="nome-passeggero" type="text" />
-        <label for="Distanza"> Km da percorrere</label>
-        <input id="distanza" type="number" min="1" />
-        <label for="Fascia età">Scegli la fascia di età</label>
-        <select id="fascia-età">
-          <option></option>
-          <option>Minorenne</option>
-          <option>Maggiorenne</option>
-          <option>Over65</option>
-        </select>
-        <button id="invia-dati">Calcola il costo</button>
+        <div class="row d-flex justify-content-around">
+          <div class="col-3">
+            <div class="card">
+              <label for="Nome"> Nome Cognome</label>
+              <input id="nome-passeggero" type="text" />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <label for="Distanza"> Km da percorrere</label>
+              <input id="distanza" type="number" min="1" />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <label for="Fascia età">Scegli la fascia di età</label>
+              <select id="fascia-età">
+                <option></option>
+                <option>Minorenne</option>
+                <option>Maggiorenne</option>
+                <option>Over65</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-6 text-center mt-2 mb-2">
+            <button
+              class="btn bg-secondary text-white border-dark"
+              id="invia-dati"
+            >
+              Calcola il costo
+            </button>
+            <button class="btn bg-secondary text-white border-dark">
+              Annulla
+            </button>
+          </div>
+        </div>
       </form>
+
       <h4>DETTAGLIO PASSEGGERI</h4>
       <div class="row">
-        <div class="col-12"></div>
-        <table>
-          <thead>
-            <tr>
-              <th>NOME PASSEGGERO</th>
-              <th>Offerta</th>
-              <th>Carrozza</th>
-              <th>Codice CP</th>
-              <th>Costo biglietto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="nome-passeggero-tabella"></td>
-              <td>Biglietto standard</td>
-              <td>5</td>
-              <td>92911</td>
-              <td id="costo-biglietto-tabella"></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="col-12">
+          <table class="border text-center">
+            <thead>
+              <tr>
+                <th class="w-25 bg-secondary">NOME PASSEGGERO</th>
+                <th class="w-25">Offerta</th>
+                <th class="w-25">Carrozza</th>
+                <th class="w-25">Codice CP</th>
+                <th class="w-25">Costo biglietto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bg-secondary" id="nome-passeggero-tabella"></td>
+                <td>Biglietto standard</td>
+                <td>5</td>
+                <td>92911</td>
+                <td id="costo-biglietto-tabella"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </body>

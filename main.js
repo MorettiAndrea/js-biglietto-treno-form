@@ -6,6 +6,13 @@ const etàEl = document.getElementById("fascia-età");
 const invioEl = document.getElementById("invia-dati");
 const casellaNome = document.getElementById("nome-passeggero-tabella");
 const casellaCosto = document.getElementById("costo-biglietto-tabella");
+const inputForm = document.getElementById("input-form");
+
+// funzione form
+inputForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+});
+console.log(inputForm);
 
 // funzione bottone
 
@@ -30,13 +37,17 @@ invioEl.addEventListener("click", function () {
 
   if (età === "Minorenne") {
     casellaCosto.textContent = "€" + prezzoScontatoMinorenni.toFixed(2);
-    casellaNome.textContent === passeggero;
+    casellaNome.textContent = passeggero;
   } else if (età === "Over65") {
     casellaCosto.textContent = "€" + prezzoScontatoOver65.toFixed(2);
-    casellaNome.textContent === passeggero;
-  } else {
+    casellaNome.textContent = passeggero;
+  } else if (età === "Maggiorenne") {
     casellaCosto.textContent = "€" + costoBiglietto.toFixed(2);
-    casellaNome.textContent === passeggero.textContent;
+    casellaNome.textContent = passeggero.textContent;
   }
-  return casellaCosto, casellaNome;
+
+  if (isNaN(distanza) || passeggero.textContent === null) {
+    alert("ricontrolla i tuoi dati");
+    return;
+  }
 });
